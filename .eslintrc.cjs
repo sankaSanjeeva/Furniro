@@ -26,8 +26,6 @@ module.exports = {
       rules: {
         'react/prop-types': 'off',
         'react/jsx-props-no-spreading': 'off',
-        'import/no-unresolved': 'off',
-        'import/extensions': 'off',
       },
     },
   ],
@@ -41,6 +39,8 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': 'off',
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
   },
   ignorePatterns: [
     '.eslintrc.cjs',
