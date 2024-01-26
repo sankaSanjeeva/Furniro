@@ -21,6 +21,15 @@ module.exports = {
         sourceType: 'script',
       },
     },
+    {
+      files: ['src/common/components/ui/*.*'],
+      rules: {
+        'react/prop-types': 'off',
+        'react/jsx-props-no-spreading': 'off',
+        'import/no-unresolved': 'off',
+        'import/extensions': 'off',
+      },
+    },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -31,6 +40,12 @@ module.exports = {
   plugins: ['@typescript-eslint', 'react'],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': 'off',
   },
-  ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts'],
+  ignorePatterns: [
+    '.eslintrc.cjs',
+    'vite.config.ts',
+    'postcss.config.js',
+    'tailwind.config.js',
+  ],
 };
