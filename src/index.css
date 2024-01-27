@@ -7,3 +7,9 @@
     font-family: 'Poppins', sans-serif;
   }
 }
+
+@layer utilities {
+  .bg-img {
+    background-image: url('assets/background.png');
+  }
+}
