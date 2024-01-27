@@ -1,32 +1,41 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Heart, Search, ShoppingCart, UserRound } from 'lucide-react';
 import logo from './logo.png';
 import { Button } from '../ui/button';
 
+function NavItem({ to, name }: { to: string; name: string }) {
+  return (
+    <li>
+      <NavLink
+        to={to}
+        className={({ isActive }) =>
+          isActive
+            ? "relative after:block after:content-[''] after:absolute after:h-1 after:bg-theme after:w-full after:scale-x-100 after:transition"
+            : "relative after:block after:content-[''] after:absolute after:h-1 after:bg-theme after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition"
+        }
+      >
+        {name}
+      </NavLink>
+    </li>
+  );
+}
+
 export default function Header() {
   return (
-    <header className="shadow">
+    <header className="bg-white">
       <div className="mx-auto max-w-screen-xl px-10 h-24 flex justify-between items-center">
         <div className="shrink-0">
-          <Link to="/">
+          <NavLink to="/">
             <img src={logo} className="logo react" alt="React logo" />
-          </Link>
+          </NavLink>
         </div>
 
         <nav>
           <ul className="flex gap-20 font-medium">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="shop">Shop</Link>
-            </li>
-            <li>
-              <Link to="about">About</Link>
-            </li>
-            <li>
-              <Link to="contact">Contact</Link>
-            </li>
+            <NavItem to="/" name="Home" />
+            <NavItem to="shop" name="Shop" />
+            <NavItem to="about" name="About" />
+            <NavItem to="contact" name="Contact" />
           </ul>
         </nav>
 
