@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { ErrorPage, Root } from '@/common/components';
+import { Home } from './pages';
 
 export default createBrowserRouter([
   {
@@ -9,7 +10,7 @@ export default createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div />,
+        element: <Home />,
       },
       {
         path: 'shop',

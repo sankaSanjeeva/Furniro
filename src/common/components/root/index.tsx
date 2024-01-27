@@ -7,7 +7,9 @@ export default function Root() {
       <Header />
 
       <main className="flex-grow bg-[url('src/common/images/background.png')] bg-center bg-no-repeat bg-cover bg-fixed">
-        <Outlet />
+        <div className="mx-auto max-w-screen-xl px-10">
+          <Outlet />
+        </div>
       </main>
 
       <Footer />

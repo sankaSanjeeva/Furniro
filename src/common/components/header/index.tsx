@@ -22,7 +22,7 @@ function NavItem({ to, name }: { to: string; name: string }) {
 
 export default function Header() {
   return (
-    <header className="bg-white">
+    <header className="sticky top-0 bg-white">
       <div className="mx-auto max-w-screen-xl px-10 h-24 flex justify-between items-center">
         <div className="shrink-0">
           <NavLink to="/">
