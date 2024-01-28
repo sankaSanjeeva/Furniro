@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       {/* welcome content */}
-      <div className="flex justify-end items-center h-[calc(100vh_-_96px)]">
+      <div className="flex justify-center lg:justify-end items-center h-[calc(100vh_-_96px)]">
         <div className="p-10 rounded-[10px] bg-[#FFF3E3]">
           <h3 className="font-semibold tracking-widest mb-1">New Arrival</h3>
           <h1 className="text-[52px] leading-[64px] font-bold text-theme">
