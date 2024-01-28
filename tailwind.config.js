@@ -19,6 +19,8 @@ module.exports = {
     extend: {
       colors: {
         theme: '#B88E2F',
+        'text-p': '#333333',
+        'text-s': '#666666',
       },
       keyframes: {
         'accordion-down': {
