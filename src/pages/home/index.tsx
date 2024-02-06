@@ -1,4 +1,9 @@
-import { BrowseTheRange, OurProducts, Welcome } from './components';
+import {
+  BrowseTheRange,
+  ExploreMore,
+  OurProducts,
+  Welcome,
+} from './components';
 
 export default function Home() {
   return (
@@ -8,6 +13,8 @@ export default function Home() {
       <BrowseTheRange />
 
       <OurProducts />
+
+      <ExploreMore />
     </div>
   );
 }
