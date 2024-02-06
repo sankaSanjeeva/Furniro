@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Heart, Search, ShoppingCart, UserRound } from 'lucide-react';
 import logo from './logo.png';
 import { Button } from '../ui/button';
+import { cn } from '@/common/lib/utils';
 
 function NavItem({
   to,
@@ -43,7 +44,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed w-full flex flex-col overflow-hidden ${isMenuExpand ? 'h-screen' : 'h-24'} md:h-24 transition-[height] duration-500 bg-white`}
+      className={cn(
+        'fixed w-full flex flex-col overflow-hidden md:h-24 z-10 transition-[height] duration-500 bg-white',
+        isMenuExpand ? 'h-screen' : 'h-24'
+      )}
     >
       <button
         type="button"
@@ -51,18 +55,30 @@ export default function Header() {
         className="md:hidden m-[25px] ml-auto flex flex-col items-end gap-4"
       >
         <span
-          className={`block w-[50px] h-[5px] bg-theme ${isMenuExpand ? 'translate-y-[21px] rotate-45' : ''} transition-[transform] duration-500`}
+          className={cn(
+            'block w-[50px] h-[5px] bg-theme transition-[transform] duration-500',
+            isMenuExpand && 'translate-y-[21px] rotate-45'
+          )}
         />
         <span
-          className={`block w-[40px] h-[5px] bg-theme ${isMenuExpand ? 'opacity-0' : 'opacity-100'} transition-[opacity] duration-500`}
+          className={cn(
+            'block w-[40px] h-[5px] bg-theme transition-[opacity] duration-500',
+            isMenuExpand ? 'opacity-0' : 'opacity-100'
+          )}
         />
         <span
-          className={`block w-[50px] h-[5px] bg-theme ${isMenuExpand ? '-translate-y-[21px] -rotate-45' : ''} transition-[transform] duration-500`}
+          className={cn(
+            'block w-[50px] h-[5px] bg-theme transition-[transform] duration-500',
+            isMenuExpand && '-translate-y-[21px] -rotate-45'
+          )}
         />
       </button>
 
       <div
-        className={`flex-grow ${isMenuExpand ? 'opacity-100' : 'opacity-0'} md:opacity-100 transition-[opacity] duration-700`}
+        className={cn(
+          'flex-grow md:opacity-100 transition-[opacity] duration-700',
+          isMenuExpand ? 'opacity-100' : 'opacity-0'
+        )}
       >
         <div className="mx-auto max-w-screen-xl h-full px-5 lg:px-10 flex flex-col md:flex-row justify-around md:justify-between items-center gap-5">
           <div className="shrink-0">
