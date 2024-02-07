@@ -3,8 +3,8 @@ import { Button } from '@/common/components/ui/button';
 
 export default function OurProducts() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-screen-xl px-5 md:px-10 py-10 font-semibold text-text-p">
+    <section className="scroll-mt-24 bg-white" id="products">
+      <div className="mx-auto max-w-screen-laptop px-5 md:px-10 laptop:px-24 py-10 font-semibold text-text-p">
         <h1 className="text-5xl font-bold text-center">Our Products</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8">
