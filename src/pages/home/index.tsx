@@ -1,6 +1,7 @@
 import {
   BrowseTheRange,
   ExploreMore,
+  Gallery,
   OurProducts,
   Welcome,
 } from './components';
@@ -15,6 +16,8 @@ export default function Home() {
       <OurProducts />
 
       <ExploreMore />
+
+      <Gallery />
     </div>
   );
 }
