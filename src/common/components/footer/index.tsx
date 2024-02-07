@@ -4,7 +4,7 @@ import { Button } from '../ui/button';
 export default function Footer() {
   return (
     <footer className="border-t border-t-black/15">
-      <div className="mx-auto max-w-screen-xl px-5 md:px-10">
+      <div className="mx-auto max-w-screen-laptop px-5 sm:px-10 xl:px-24">
         <div className="py-12 flex flex-col md:flex-row justify-between gap-10">
           <div className="flex gap-10 flex-row md:flex-col">
             <h1 className="text-2xl font-bold">Furniro</h1>
@@ -17,7 +17,7 @@ export default function Footer() {
 
           <div>
             <span className="text-[#9F9F9F]">Links</span>
-            <ul className="mt-5 md:mt-12 flex flex-row md:flex-col gap-10 font-medium">
+            <ul className="mt-5 md:mt-12 flex flex-row md:flex-col gap-10 flex-wrap font-medium">
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -35,7 +35,7 @@ export default function Footer() {
 
           <div>
             <span className="text-[#9F9F9F]">Help</span>
-            <ul className="mt-5 md:mt-12 flex flex-row md:flex-col gap-10 font-medium">
+            <ul className="mt-5 md:mt-12 flex flex-row md:flex-col gap-10 flex-wrap font-medium">
               <li>Payment Options</li>
               <li>Returns</li>
               <li>Privacy Policies</li>

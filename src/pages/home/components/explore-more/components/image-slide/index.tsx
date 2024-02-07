@@ -49,7 +49,7 @@ export default function ImageSlide({ active, index, imageUrl }: Props) {
         <div className="py-8 px-4 backdrop-blur-sm bg-white/70">
           <p className="flex items-center gap-2">
             <span>{index}</span>
-            <div className="h-[1px] w-4 bg-text-s" />
+            <span className="h-[1px] w-4 bg-text-s" />
             <span>Bed Room</span>
           </p>
           <span className="font-semibold text-[28px] text-text-p">

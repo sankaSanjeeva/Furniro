@@ -31,7 +31,7 @@ function NavItem({
   );
 }
 
-export default function Header() {
+export default function Header({ hasScrolled }: { hasScrolled: boolean }) {
   const [isMenuExpand, setIsMenuExpand] = useState(false);
 
   const collapseMenu = () => {
@@ -45,8 +45,9 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed w-full flex flex-col overflow-hidden md:h-24 z-10 transition-[height] duration-500 bg-white',
-        isMenuExpand ? 'h-screen' : 'h-24'
+        'fixed w-full flex flex-col overflow-hidden h-24 z-10 transition-[height] duration-500 shadow-md bg-white',
+        hasScrolled && 'h-16',
+        isMenuExpand && 'h-screen'
       )}
     >
       <button

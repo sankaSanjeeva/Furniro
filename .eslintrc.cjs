@@ -25,7 +25,6 @@ module.exports = {
       files: ['src/common/components/ui/*.*'],
       rules: {
         'react/prop-types': 'off',
-        'react/jsx-props-no-spreading': 'off',
       },
     },
   ],
@@ -40,6 +39,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
   },

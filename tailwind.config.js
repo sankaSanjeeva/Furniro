@@ -22,6 +22,9 @@ module.exports = {
         'text-p': '#333333',
         'text-s': '#666666',
       },
+      screens: {
+        laptop: '1440px',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
