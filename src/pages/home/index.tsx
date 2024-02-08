@@ -5,10 +5,14 @@ import {
   OurProducts,
   Welcome,
 } from './components';
+import background from '@/assets/images/background/home.png';
 
 export default function Home() {
   return (
-    <div className="bg-img bg-center bg-no-repeat bg-cover bg-fixed">
+    <div
+      style={{ backgroundImage: `url(${background})` }}
+      className="bg-center bg-no-repeat bg-cover bg-fixed"
+    >
       <Welcome />
 
       <BrowseTheRange />

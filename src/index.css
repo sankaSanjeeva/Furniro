@@ -8,9 +8,3 @@
     scroll-behavior: smooth;
   }
 }
-
-@layer utilities {
-  .bg-img {
-    background-image: url('assets/background.png');
-  }
-}
