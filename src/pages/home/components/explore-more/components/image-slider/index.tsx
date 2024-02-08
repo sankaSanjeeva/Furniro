@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronIcon } from '@/assets/icons';
 import bedroom from '@/assets/bedroom.png';
 import dining from '@/assets/dining.png';
 import { cn } from '@/common/lib/utils';
@@ -27,7 +27,7 @@ export default function ImageSlider() {
         )}
         onClick={() => changeSlide(-1)}
       >
-        <ChevronLeft className="stroke-theme" />
+        <ChevronIcon className="rotate-180" />
       </button>
 
       <button
@@ -38,7 +38,7 @@ export default function ImageSlider() {
         )}
         onClick={() => changeSlide(1)}
       >
-        <ChevronRight className="stroke-theme" />
+        <ChevronIcon />
       </button>
 
       <div className="absolute bottom-0 left-[calc(400px_+_24px)] h-[calc(582px_-_480px)] p-2 flex items-center gap-5">
