@@ -1,5 +1,6 @@
 import { ChevronIcon } from '@/assets/icons';
 import background from '@/assets/images/background/cafe.jpg';
+import { Capabilities, ProductList } from './components';
 
 export default function Shop() {
   return (
@@ -11,7 +12,7 @@ export default function Shop() {
         <div className="backdrop-blur-sm py-28 bg-white/25">
           <div className="mx-auto w-fit text-center font-medium">
             <h1 className="text-5xl mb-2">Shop</h1>
-            <p className="flex items-center">
+            <p className="flex items-center justify-center gap-1">
               <span>Home</span>
               <ChevronIcon className="w-5 h-5 [&>path]:stroke-black" />
               <span className="font-light">Shop</span>
@@ -20,7 +21,9 @@ export default function Shop() {
         </div>
       </section>
 
-      <section className="h-[200vh]">hello</section>
+      <ProductList />
+
+      <Capabilities />
     </div>
   );
 }
