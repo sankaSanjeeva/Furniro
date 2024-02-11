@@ -2,7 +2,7 @@ import { Button } from '@/common/components/ui/button';
 
 export default function Welcome() {
   return (
-    <section className="flex justify-center lg:justify-end items-center min-h-[calc(100vh_-_64px)] mx-auto max-w-screen-laptop px-14">
+    <section className="flex justify-center lg:justify-end items-center min-h-[calc(100vh_-_96px)] mx-auto max-w-screen-laptop px-14">
       <div className="p-10 my-10 rounded-[10px] text-center lg:text-left max-w-[620px] text-text-p bg-theme-light">
         <h3 className="font-semibold tracking-widest mb-1">New Arrival</h3>
         <h1 className="text-5xl lg:text-6xl font-bold text-theme">

@@ -8,12 +8,9 @@ export default function Root() {
   const ref = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([{ isIntersecting }]) => {
-        setHasScrolled(!isIntersecting);
-      },
-      { rootMargin: '75px' }
-    );
+    const observer = new IntersectionObserver(([{ isIntersecting }]) => {
+      setHasScrolled(!isIntersecting);
+    });
 
     if (ref.current) {
       observer.observe(ref.current);
@@ -28,7 +25,7 @@ export default function Root() {
 
       <div ref={ref} />
 
-      <main className="flex-grow mt-16">
+      <main className="flex-grow">
         <Outlet />
       </main>
 

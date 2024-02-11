@@ -7,9 +7,9 @@ export default function Shop() {
     <div>
       <section
         style={{ backgroundImage: `url(${background})` }}
-        className="bg-top bg-no-repeat bg-cover bg-fixed"
+        className="bg-top bg-no-repeat bg-cover"
       >
-        <div className="backdrop-blur-sm py-28 bg-white/25">
+        <div className="backdrop-blur-sm py-28 bg-white/40">
           <div className="mx-auto w-fit text-center font-medium">
             <h1 className="text-5xl mb-2">Shop</h1>
             <p className="flex items-center justify-center gap-1">
