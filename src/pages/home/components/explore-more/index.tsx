@@ -3,7 +3,7 @@ import { ImageSlider } from './components';
 
 export default function ExploreMore() {
   return (
-    <section className="bg-[#FCF8F3]">
+    <section className="bg-theme-light">
       <div className="mx-auto max-w-screen-laptop py-11 flex flex-col xl:flex-row xl:items-center text-text-p">
         <div className="px-10 xl:pl-24 shrink-0 text-center mx-auto xl:text-left">
           <div className="mb-6 max-w-[420px]">

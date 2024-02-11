@@ -35,45 +35,54 @@ export default function Header({ hasScrolled }: { hasScrolled: boolean }) {
   const [isMenuExpand, setIsMenuExpand] = useState(false);
 
   const collapseMenu = () => {
+    document.body.classList.remove('overflow-hidden');
     setIsMenuExpand(false);
   };
 
   const toggleMenu = () => {
+    document.body.classList.toggle('overflow-hidden');
     setIsMenuExpand((prev) => !prev);
   };
 
   return (
     <header
       className={cn(
-        'fixed w-full flex flex-col overflow-hidden h-24 z-10 transition-[height] duration-500 shadow-md bg-white',
+        'sticky top-0 w-full flex flex-col overflow-hidden h-24 z-10 transition-[height] duration-500 shadow-md bg-white',
         hasScrolled && 'h-16',
         isMenuExpand && 'h-screen'
       )}
     >
-      <button
-        type="button"
-        onClick={toggleMenu}
-        className="md:hidden m-[25px] ml-auto flex flex-col items-end gap-4"
+      <div
+        className={cn(
+          'flex justify-end items-center shrink-0 md:hidden transition-[height] duration-500',
+          hasScrolled ? 'h-16' : 'h-24'
+        )}
       >
-        <span
-          className={cn(
-            'block w-[50px] h-[5px] bg-theme transition-[transform] duration-500',
-            isMenuExpand && 'translate-y-[21px] rotate-45'
-          )}
-        />
-        <span
-          className={cn(
-            'block w-[40px] h-[5px] bg-theme transition-[opacity] duration-500',
-            isMenuExpand ? 'opacity-0' : 'opacity-100'
-          )}
-        />
-        <span
-          className={cn(
-            'block w-[50px] h-[5px] bg-theme transition-[transform] duration-500',
-            isMenuExpand && '-translate-y-[21px] -rotate-45'
-          )}
-        />
-      </button>
+        <button
+          type="button"
+          onClick={toggleMenu}
+          className="mr-6 flex flex-col items-end gap-4"
+        >
+          <span
+            className={cn(
+              'block w-[50px] h-[5px] bg-theme transition-[transform] duration-500',
+              isMenuExpand && 'translate-y-[21px] rotate-45'
+            )}
+          />
+          <span
+            className={cn(
+              'block w-[40px] h-[5px] bg-theme transition-[opacity] duration-500',
+              isMenuExpand ? 'opacity-0' : 'opacity-100'
+            )}
+          />
+          <span
+            className={cn(
+              'block w-[50px] h-[5px] bg-theme transition-[transform] duration-500',
+              isMenuExpand && '-translate-y-[21px] -rotate-45'
+            )}
+          />
+        </button>
+      </div>
 
       <div
         className={cn(

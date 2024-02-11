@@ -18,7 +18,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        theme: '#B88E2F',
+        theme: {
+          DEFAULT: '#B88E2F',
+          light: '#F9F1E7',
+        },
         'text-p': '#333333',
         'text-s': '#666666',
       },

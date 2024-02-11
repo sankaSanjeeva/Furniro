@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowIcon } from '@/assets/icons';
 import { cn } from '@/common/lib/utils';
 import { Button } from '@/common/components/ui/button';
 
@@ -57,7 +57,7 @@ export default function ImageSlide({ active, index, imageUrl }: Props) {
           </span>
         </div>
         <Button>
-          <ArrowRight />
+          <ArrowIcon />
         </Button>
       </div>
     </div>
