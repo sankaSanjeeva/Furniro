@@ -1,6 +1,7 @@
 import { ChevronIcon } from '@/assets/icons';
 import background from '@/assets/images/background/cafe.jpg';
-import { Capabilities, ProductList } from './components';
+import { ProductList } from './components';
+import { PreFooter } from '@/common/components';
 
 export default function Shop() {
   return (
@@ -23,7 +24,7 @@ export default function Shop() {
 
       <ProductList />
 
-      <Capabilities />
+      <PreFooter />
     </div>
   );
 }

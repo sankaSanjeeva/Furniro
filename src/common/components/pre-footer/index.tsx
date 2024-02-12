@@ -26,7 +26,7 @@ function Card({
   );
 }
 
-export default function Capabilities() {
+export default function PreFooter() {
   return (
     <section className=" bg-theme-light">
       <div className="max-w-screen-laptop w-fit mx-auto py-24 px-14 grid grid-cols-1 lg:grid-cols-2 laptop:flex gap-14">
