@@ -1,10 +1,14 @@
+import { useNavigate } from 'react-router-dom';
 import { GitCompare, Heart, Share2 } from 'lucide-react';
 import dining from '@/assets/dining.png';
 import { cn } from '@/common/lib/utils';
 import { Button } from '../ui/button';
 
+const discount = null;
+const id = 123;
+
 export default function ProductCard() {
-  const discount = null;
+  const navigate = useNavigate();
 
   return (
     <div className="group relative mx-auto w-full max-w-72 bg-slate-100">
@@ -35,7 +39,11 @@ export default function ProductCard() {
       </div>
 
       <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#3A3A3A]/75">
-        <Button variant="outline" className="w-[200px]">
+        <Button
+          variant="outline"
+          className="w-[200px]"
+          onClick={() => navigate(`/shop/${id}`)}
+        >
           Add to cart
         </Button>
         <div className="flex justify-evenly w-full text-white">
