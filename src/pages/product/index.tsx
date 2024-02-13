@@ -5,11 +5,10 @@ import {
   SeparatorVertical,
   StarRate,
 } from '@/common/components';
-import { Breadcrumb } from './components';
+import { Breadcrumb, Gallery } from './components';
 import { Button } from '@/common/components/ui/button';
 import { cn } from '@/common/lib/utils';
 import { FacebookIcon, InstagramIcon, TwitterXIcon } from '@/assets/icons';
-import background from '@/assets/dining.png';
 
 const sizes = ['L', 'XL', 'XS'];
 const colors = ['#816DFA', '#000000', '#B88E2F'];
@@ -54,30 +53,14 @@ export default function Product() {
       <Breadcrumb productName="Asgaard sofa" />
 
       <div className="max-w-screen-laptop mx-auto px-5 sm:px-10 xl:px-24 pt-9 pb-16 flex flex-col lg:flex-row gap-10 xl:gap-24">
-        <div className="flex gap-8">
-          <div className="flex flex-col gap-8">
-            <div
-              style={{ backgroundImage: `url(${background})` }}
-              className="h-20 w-20 bg-cover bg-center bg-no-repeat rounded-[10px]"
-            />
-            <div
-              style={{ backgroundImage: `url(${background})` }}
-              className="h-20 w-20 bg-cover bg-center bg-no-repeat rounded-[10px]"
-            />
-            <div
-              style={{ backgroundImage: `url(${background})` }}
-              className="h-20 w-20 bg-cover bg-center bg-no-repeat rounded-[10px]"
-            />
-            <div
-              style={{ backgroundImage: `url(${background})` }}
-              className="h-20 w-20 bg-cover bg-center bg-no-repeat rounded-[10px]"
-            />
-          </div>
-          <div
-            style={{ backgroundImage: `url(${background})` }}
-            className="h-[420px] w-[420px] bg-cover bg-center bg-no-repeat  rounded-[10px]"
-          />
-        </div>
+        <Gallery
+          images={[
+            'https://media.istockphoto.com/id/1186545523/photo/narrow-living-room.jpg?s=612x612&w=0&k=20&c=f26cCLhQ-bChR0iLRKJPh89EfUfMTzwXZzDgmeNDL0c=',
+            'https://media.istockphoto.com/id/1254852844/photo/balcony-with-rattan-furniture.jpg?s=612x612&w=0&k=20&c=L5zbcFWazkRTWXavI-GPXJKDKOqQpJTYO6pI06XGthU=',
+            'https://m.media-amazon.com/images/I/41g9yMVDzDL.jpg',
+            'https://media.istockphoto.com/id/1428131201/photo/cozy-luxury-and-modern-living-room-with-large-windows-sofa-chairs-decoration-and-fireplace.jpg?s=612x612&w=0&k=20&c=GI0Ub0OydbfHl0mQLtQSTbBpokKVaA_Run-dlOoSmYs=',
+          ]}
+        />
 
         <div>
           <h1 className="text-[42px]">Asgaard sofa</h1>
