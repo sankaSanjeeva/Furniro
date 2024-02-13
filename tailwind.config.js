@@ -24,6 +24,7 @@ module.exports = {
         },
         'text-p': '#333333',
         'text-s': '#666666',
+        'text-t': '#9F9F9F',
       },
       screens: {
         laptop: '1440px',

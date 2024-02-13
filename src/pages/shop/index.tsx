@@ -15,7 +15,7 @@ export default function Shop() {
             <h1 className="text-5xl mb-2">Shop</h1>
             <p className="flex items-center justify-center gap-1">
               <span>Home</span>
-              <ChevronIcon className="w-5 h-5 [&>path]:stroke-black" />
+              <ChevronIcon className="text-black" />
               <span className="font-light">Shop</span>
             </p>
           </div>

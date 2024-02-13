@@ -27,7 +27,7 @@ export default function ImageSlider() {
         )}
         onClick={() => changeSlide(-1)}
       >
-        <ChevronIcon className="rotate-180" />
+        <ChevronIcon className="rotate-180 h-6 w-6 text-theme" />
       </button>
 
       <button
@@ -38,7 +38,7 @@ export default function ImageSlider() {
         )}
         onClick={() => changeSlide(1)}
       >
-        <ChevronIcon />
+        <ChevronIcon className=" h-6 w-6 text-theme" />
       </button>
 
       <div className="absolute bottom-0 left-[calc(400px_+_24px)] h-[calc(582px_-_480px)] p-2 flex items-center gap-5">
