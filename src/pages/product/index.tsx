@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Separator, StarRate } from '@/common/components';
-import { Breadcrumb, Gallery } from './components';
+import {
+  AdditionalDetails,
+  Breadcrumb,
+  Gallery,
+  RelatedProducts,
+} from './components';
 import { Button } from '@/common/components/ui/button';
 import { cn } from '@/common/lib/utils';
 import { FacebookIcon, InstagramIcon, TwitterXIcon } from '@/assets/icons';
@@ -174,6 +179,14 @@ export default function Product() {
           </table>
         </div>
       </div>
+
+      <Separator />
+
+      <AdditionalDetails />
+
+      <Separator />
+
+      <RelatedProducts />
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import { ProductCard } from '@/common/components';
+import { Products } from '@/common/components';
 import { Button } from '@/common/components/ui/button';
 
 export default function OurProducts() {
@@ -7,11 +7,11 @@ export default function OurProducts() {
       <div className="mx-auto max-w-screen-laptop px-5 md:px-10 laptop:px-24 py-10 font-semibold text-text-p">
         <h1 className="text-5xl font-bold text-center">Our Products</h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8">
+        <Products className="mt-8">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((x) => (
-            <ProductCard key={x} />
+            <Products.Card key={x} />
           ))}
-        </div>
+        </Products>
 
         <div className="text-center mt-8">
           <Button variant="outline" className="w-60">
