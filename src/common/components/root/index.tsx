@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Footer, Header } from '..';
+import { Footer, Header, Separator } from '..';
 
 export default function Root() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -28,6 +28,8 @@ export default function Root() {
       <main className="flex-grow">
         <Outlet />
       </main>
+
+      <Separator />
 
       <Footer />
     </div>

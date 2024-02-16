@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Button } from '../ui/button';
+import { Separator } from '..';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-t-black/15">
+    <footer>
       <div className="mx-auto max-w-screen-laptop px-5 sm:px-10 xl:px-24">
         <div className="py-12 flex flex-col md:flex-row justify-between gap-10">
           <div className="flex gap-10 flex-row md:flex-col">
@@ -55,7 +56,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-8 leading-none border-t border-t-black/15">
+        <Separator />
+
+        <div className="py-8 leading-none">
           2024 furino. All rights reserved
         </div>
       </div>

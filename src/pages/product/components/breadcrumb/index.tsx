@@ -1,5 +1,5 @@
 import { ChevronIcon } from '@/assets/icons';
-import { SeparatorVertical } from '@/common/components';
+import { Separator } from '@/common/components';
 
 export default function Breadcrumb({ productName }: { productName: string }) {
   return (
@@ -8,7 +8,7 @@ export default function Breadcrumb({ productName }: { productName: string }) {
         <span>Home</span>
         <ChevronIcon className="text-black" />
         <span>Shop</span>
-        <SeparatorVertical />
+        <Separator orientation="vertical" className="h-9" />
         <span className="text-black">{productName}</span>
       </div>
     </div>

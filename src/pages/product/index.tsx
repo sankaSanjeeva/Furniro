@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import {
-  SeparatorHorizontal,
-  SeparatorVertical,
-  StarRate,
-} from '@/common/components';
+import { Separator, StarRate } from '@/common/components';
 import { Breadcrumb, Gallery } from './components';
 import { Button } from '@/common/components/ui/button';
 import { cn } from '@/common/lib/utils';
@@ -68,7 +64,7 @@ export default function Product() {
 
           <div className="flex items-center gap-5 mt-[10px]">
             <StarRate rate={4} />
-            <SeparatorVertical className="h-7" />
+            <Separator orientation="vertical" className="h-7" />
             <span className="text-sm text-text-t">5 Customer Review</span>
           </div>
 
@@ -144,7 +140,7 @@ export default function Product() {
             </div>
           </div>
 
-          <SeparatorHorizontal className="mt-14 mb-10" />
+          <Separator className="mt-14 mb-10" />
 
           <table className="text-text-t">
             <tbody>
