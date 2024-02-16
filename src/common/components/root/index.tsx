@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Footer, Header, Separator } from '..';
+import { Footer, Header, Section, Separator } from '..';
 
 export default function Root() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -31,7 +31,11 @@ export default function Root() {
 
       <Separator />
 
-      <Footer />
+      <footer>
+        <Section>
+          <Footer />
+        </Section>
+      </footer>
     </div>
   );
 }

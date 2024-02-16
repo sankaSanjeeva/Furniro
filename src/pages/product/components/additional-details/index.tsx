@@ -1,6 +1,6 @@
 export default function AdditionalDetails() {
   return (
-    <div className="max-w-screen-laptop mx-auto px-5 sm:px-10 xl:px-24 pt-12 pb-16">
+    <div>
       <div className="flex flex-col md:flex-row justify-center gap-5 md:gap-14 text-center text-2xl text-text-t">
         <div className="font-medium text-black">Description</div>
         <div>Additional Information</div>

@@ -22,7 +22,7 @@ function Image({
 
 export default function Gallery() {
   return (
-    <section className="bg-white py-12">
+    <div>
       <div className="text-center">
         <h2 className="text-xl font-semibold text-text-s">
           Share your setup with
@@ -32,7 +32,7 @@ export default function Gallery() {
         </h1>
       </div>
 
-      <div className="mx-auto max-w-screen-laptop grid grid-cols-[repeat(14,minmax(0,1fr))] grid-rows-[repeat(8,minmax(5.53vw,1fr))] laptop:grid-rows-[repeat(8,minmax(80px,1fr))] gap-[1.1vw] laptop:gap-4 group">
+      <div className="grid grid-cols-[repeat(14,minmax(0,1fr))] grid-rows-[repeat(8,minmax(5.53vw,1fr))] laptop:grid-rows-[repeat(8,minmax(80px,1fr))] gap-[1.1vw] laptop:gap-4">
         <Image url={bedroom} className="row-span-4" />
         <Image
           url={dining}
@@ -46,6 +46,6 @@ export default function Gallery() {
         <Image url={dining} className="col-span-2 row-span-3" />
         <Image url={living} className="col-span-3 row-span-2" />
       </div>
-    </section>
+    </div>
   );
 }

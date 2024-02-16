@@ -1,7 +1,6 @@
-import { HTMLAttributes } from 'react';
 import { cn } from '@/common/lib/utils';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   orientation?: 'vertical' | 'horizontal';
 }
 

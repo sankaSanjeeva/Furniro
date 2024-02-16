@@ -1,7 +1,7 @@
 import { ChevronIcon } from '@/assets/icons';
 import background from '@/assets/images/background/cafe.jpg';
-import { ProductList } from './components';
-import { PreFooter } from '@/common/components';
+import { Filter, ProductList } from './components';
+import { PreFooter, Section } from '@/common/components';
 
 export default function Shop() {
   return (
@@ -22,9 +22,20 @@ export default function Shop() {
         </div>
       </section>
 
-      <ProductList />
+      <Section wrapperClass="text-nowrap bg-theme-light" className="py-6">
+        <Filter itemCount={32} />
+      </Section>
 
-      <PreFooter />
+      <Section>
+        <ProductList />
+      </Section>
+
+      <Section
+        wrapperClass="bg-theme-light"
+        className="py-24 px-10 lg:px-14 xl:px-14"
+      >
+        <PreFooter />
+      </Section>
     </div>
   );
 }
