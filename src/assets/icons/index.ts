@@ -1,4 +1,6 @@
 export { default as ArrowIcon } from './arrow.svg?react';
+export { default as CartCloseIcon } from './cart-close.svg?react';
+export { default as CartRemoveIcon } from './cart-remove.svg?react';
 export { default as ChevronIcon } from './chevron.svg?react';
 export { default as FilterIcon } from './filter.svg?react';
 export { default as GridViewIcon } from './grid.svg?react';

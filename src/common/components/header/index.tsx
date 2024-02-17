@@ -4,6 +4,8 @@ import { Heart, Search, ShoppingCart, UserRound } from 'lucide-react';
 import logo from './logo.png';
 import { Button } from '../ui/button';
 import { cn } from '@/common/lib/utils';
+import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
+import { Cart } from '..';
 
 function NavItem({
   to,
@@ -123,9 +125,16 @@ export default function Header({ hasScrolled }: { hasScrolled: boolean }) {
               </Button>
             </li>
             <li>
-              <Button size="icon" variant="ghost" className="h-7 w-7">
-                <ShoppingCart />
-              </Button>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button size="icon" variant="ghost" className="h-7 w-7">
+                    <ShoppingCart />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent>
+                  <Cart />
+                </SheetContent>
+              </Sheet>
             </li>
           </ul>
         </div>
