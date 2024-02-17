@@ -1,3 +1,4 @@
+import { HTMLAttributes } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GitCompare, Heart, Share2 } from 'lucide-react';
 import dining from '@/assets/dining.png';
@@ -7,7 +8,19 @@ import { Button } from '../ui/button';
 const discount = null;
 const id = 123;
 
-export default function ProductCard() {
+function Grid({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={cn(
+        'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8',
+        className
+      )}
+      {...rest}
+    />
+  );
+}
+
+function Card() {
   const navigate = useNavigate();
 
   return (
@@ -73,3 +86,7 @@ export default function ProductCard() {
     </div>
   );
 }
+
+export default Object.assign(Grid, {
+  Card,
+});

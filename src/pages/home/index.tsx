@@ -1,3 +1,4 @@
+import { Section } from '@/common/components';
 import {
   BrowseTheRange,
   ExploreMore,
@@ -15,13 +16,21 @@ export default function Home() {
     >
       <Welcome />
 
-      <BrowseTheRange />
+      <Section>
+        <BrowseTheRange />
+      </Section>
 
-      <OurProducts />
+      <Section wrapperClass="scroll-mt-24" id="products">
+        <OurProducts />
+      </Section>
 
-      <ExploreMore />
+      <Section wrapperClass="bg-theme-light" className="px-0 lg:px-0 xl:px-0">
+        <ExploreMore />
+      </Section>
 
-      <Gallery />
+      <Section wrapperClass="group" className="px-0 lg:px-0 xl:px-0">
+        <Gallery />
+      </Section>
     </div>
   );
 }
