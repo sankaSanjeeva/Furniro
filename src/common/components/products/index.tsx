@@ -70,6 +70,7 @@ function Card() {
           <button
             type="button"
             className="flex items-center gap-0.5 hover:text-theme"
+            onClick={() => navigate(`/shop/comparison?productId=${id}`)}
           >
             <GitCompare width={16} height={16} />
             <span>Compare</span>

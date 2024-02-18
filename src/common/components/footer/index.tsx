@@ -5,7 +5,7 @@ import { Separator } from '..';
 export default function Footer() {
   return (
     <div>
-      <div className="py-12 flex flex-col md:flex-row justify-between gap-10">
+      <div className="flex flex-col md:flex-row justify-between gap-10">
         <div className="flex gap-10 flex-row md:flex-col">
           <h1 className="text-2xl font-bold">Furniro</h1>
           <div className="text-[#9F9F9F]">
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <Separator />
+      <Separator className="mt-12" />
 
       <div className="py-8 leading-none">2024 furino. All rights reserved</div>
     </div>

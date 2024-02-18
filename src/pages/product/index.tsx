@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Section, Separator, StarRate } from '@/common/components';
 import {
   AdditionalDetails,
@@ -17,7 +17,9 @@ const colors = ['#816DFA', '#000000', '#B88E2F'];
 export default function Product() {
   const [count, setCount] = useState(1);
 
+  const { productId } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const size = searchParams.get('size');
   const color = searchParams.get('color');
@@ -143,6 +145,9 @@ export default function Product() {
                 <button
                   type="button"
                   className="h-12 px-4 rounded-xl border border-black opacity-75 hover:opacity-100 transition-opacity"
+                  onClick={() =>
+                    navigate(`/shop/comparison?productId=${productId}`)
+                  }
                 >
                   + Compare
                 </button>
