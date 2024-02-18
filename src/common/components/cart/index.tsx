@@ -1,7 +1,26 @@
+import { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartCloseIcon, CartRemoveIcon } from '@/assets/icons';
-import { SheetClose } from '../ui/sheet';
+import { SheetClose } from '@/common/components/ui/sheet';
 import { Separator } from '..';
-import { cn } from '@/common/lib/utils';
+import { Button } from '../ui/button';
+
+const items = [
+  {
+    id: 123,
+    image: 'https://m.media-amazon.com/images/I/41g9yMVDzDL.jpg',
+    name: 'Asgaard sofa',
+    quantity: 1,
+    price: 250000,
+  },
+  {
+    id: 456,
+    image: 'https://m.media-amazon.com/images/I/41g9yMVDzDL.jpg',
+    name: 'Asgaard sofa',
+    quantity: 1,
+    price: 250000,
+  },
+];
 
 function Item({
   image,
@@ -38,23 +57,21 @@ function Item({
   );
 }
 
-function Button({
-  className,
-  ...rest
-}: React.ButtonHTMLAttributes<HTMLButtonElement>) {
-  return (
-    <button
-      type="button"
-      className={cn(
-        'inline-flex items-center justify-center text-xs h-8 px-7 text-black/50 border hover:text-black border-black/50 hover:border-black rounded-full whitespace-nowrap transition-colors',
-        className
-      )}
-      {...rest}
-    />
-  );
-}
-
 export default function Cart() {
+  const navigate = useNavigate();
+
+  const productIds = useMemo(
+    () =>
+      items.reduce((prev, curr) => {
+        prev.append('productId', curr.id.toString());
+        return prev;
+      }, new URLSearchParams()),
+    /**
+     * TODO: Update dependencies
+     */
+    []
+  ).toString();
+
   return (
     <div className="flex flex-col h-full">
       <div className="flex justify-between">
@@ -67,18 +84,9 @@ export default function Cart() {
       <Separator className="mt-6 mb-10" />
 
       <div className="flex flex-col gap-5 flex-grow">
-        <Item
-          image="https://m.media-amazon.com/images/I/41g9yMVDzDL.jpg"
-          name="Asgaard sofa"
-          quantity={1}
-          price={250000.0}
-        />
-        <Item
-          image="https://m.media-amazon.com/images/I/41g9yMVDzDL.jpg"
-          name="Asgaard sofa"
-          quantity={1}
-          price={250000.0}
-        />
+        {items.map((item) => (
+          <Item key={item.id} {...item} />
+        ))}
       </div>
 
       <div className="flex justify-between gap-5 mt-6">
@@ -89,9 +97,29 @@ export default function Cart() {
       <Separator className="my-6" />
 
       <div className="flex justify-center sm:justify-between gap-4 flex-wrap">
-        <Button>Cart</Button>
-        <Button>Checkout</Button>
-        <Button>Comparison</Button>
+        <SheetClose asChild>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => navigate('/shop/cart')}
+          >
+            Cart
+          </Button>
+        </SheetClose>
+
+        <Button variant="secondary" size="sm">
+          Checkout
+        </Button>
+
+        <SheetClose asChild>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => navigate(`/shop/comparison?${productIds}`)}
+          >
+            Comparison
+          </Button>
+        </SheetClose>
       </div>
     </div>
   );

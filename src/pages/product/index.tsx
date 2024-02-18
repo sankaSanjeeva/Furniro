@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Section, Separator, StarRate } from '@/common/components';
 import {
   AdditionalDetails,
@@ -17,7 +17,9 @@ const colors = ['#816DFA', '#000000', '#B88E2F'];
 export default function Product() {
   const [count, setCount] = useState(1);
 
+  const { productId } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const size = searchParams.get('size');
   const color = searchParams.get('color');
@@ -123,29 +125,34 @@ export default function Product() {
             </div>
 
             <div className="flex justify-center xl:justify-start flex-wrap gap-[10px] mt-8">
-              <div className="flex gap-2 h-12 rounded-xl border border-black opacity-75 hover:opacity-100 transition-opacity">
-                <button type="button" className="px-4" onClick={decrementCount}>
+              <div className="flex gap-2 h-12 text-black border border-black rounded-2xl">
+                <button
+                  type="button"
+                  className="px-4 hover:text-black/75"
+                  onClick={decrementCount}
+                >
                   -
                 </button>
                 <span className="my-auto min-w-6 text-center">{count}</span>
-                <button type="button" className="px-4" onClick={incrementCount}>
+                <button
+                  type="button"
+                  className="px-4 hover:text-black/75"
+                  onClick={incrementCount}
+                >
                   +
                 </button>
               </div>
 
               <div className="flex gap-[10px]">
-                <button
-                  type="button"
-                  className="h-12 px-4 rounded-xl border border-black opacity-75 hover:opacity-100 transition-opacity"
-                >
-                  Add To Cart
-                </button>
-                <button
-                  type="button"
-                  className="h-12 px-4 rounded-xl border border-black opacity-75 hover:opacity-100 transition-opacity"
+                <Button variant="secondary">Add To Cart</Button>
+                <Button
+                  variant="secondary"
+                  onClick={() =>
+                    navigate(`/shop/comparison?productId=${productId}`)
+                  }
                 >
                   + Compare
-                </button>
+                </Button>
               </div>
             </div>
 
