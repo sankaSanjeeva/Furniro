@@ -1,4 +1,5 @@
 export { default as ArrowIcon } from './arrow.svg?react';
+export { default as BinIcon } from './bin.svg?react';
 export { default as CartCloseIcon } from './cart-close.svg?react';
 export { default as CartRemoveIcon } from './cart-remove.svg?react';
 export { default as ChevronIcon } from './chevron.svg?react';

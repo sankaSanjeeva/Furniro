@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { CartCloseIcon, CartRemoveIcon } from '@/assets/icons';
 import { SheetClose } from '@/common/components/ui/sheet';
 import { Separator } from '..';
-import { cn } from '@/common/lib/utils';
+import { Button } from '../ui/button';
 
 const items = [
   {
@@ -57,22 +57,6 @@ function Item({
   );
 }
 
-function Button({
-  className,
-  ...rest
-}: React.ButtonHTMLAttributes<HTMLButtonElement>) {
-  return (
-    <button
-      type="button"
-      className={cn(
-        'inline-flex items-center justify-center text-xs h-8 px-7 text-black/50 border hover:text-black border-black/50 hover:border-black rounded-full whitespace-nowrap transition-colors',
-        className
-      )}
-      {...rest}
-    />
-  );
-}
-
 export default function Cart() {
   const navigate = useNavigate();
 
@@ -113,10 +97,26 @@ export default function Cart() {
       <Separator className="my-6" />
 
       <div className="flex justify-center sm:justify-between gap-4 flex-wrap">
-        <Button>Cart</Button>
-        <Button>Checkout</Button>
         <SheetClose asChild>
-          <Button onClick={() => navigate(`/shop/comparison?${productIds}`)}>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => navigate('/shop/cart')}
+          >
+            Cart
+          </Button>
+        </SheetClose>
+
+        <Button variant="secondary" size="sm">
+          Checkout
+        </Button>
+
+        <SheetClose asChild>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => navigate(`/shop/comparison?${productIds}`)}
+          >
             Comparison
           </Button>
         </SheetClose>

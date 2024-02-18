@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { ErrorPage, Root } from '@/common/components';
 import { Comparison, Home, Product, Shop } from './pages';
+import Cart from './pages/cart';
 
 export default createBrowserRouter([
   {
@@ -22,6 +23,19 @@ export default createBrowserRouter([
           {
             path: 'comparison',
             element: <Comparison />,
+          },
+          {
+            path: 'cart',
+            children: [
+              {
+                index: true,
+                element: <Cart />,
+              },
+              {
+                path: 'checkout',
+                element: <div />,
+              },
+            ],
           },
           {
             path: ':productId',
