@@ -1,4 +1,5 @@
 import { Separator, StarRate } from '@/common/components';
+import { formatPrice } from '@/common/lib/utils';
 
 interface Props {
   image: string;
@@ -24,7 +25,7 @@ export default function PriceCard({
       />
       <div className="flex flex-col gap-1 mt-4 font-medium">
         <span className="text-2xl">{name}</span>
-        <span className="text-lg">{price}</span>
+        <span className="text-lg">{formatPrice(price)}</span>
         <div className="flex items-center gap-[6px]">
           <span className="text-lg">{starts}</span>
           <StarRate rate={starts} />

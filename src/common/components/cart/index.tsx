@@ -4,6 +4,7 @@ import { CartCloseIcon, CartRemoveIcon } from '@/assets/icons';
 import { SheetClose } from '@/common/components/ui/sheet';
 import { Separator } from '..';
 import { Button } from '../ui/button';
+import { formatPrice } from '@/common/lib/utils';
 
 const items = [
   {
@@ -46,7 +47,7 @@ function Item({
         <div className="flex items-center gap-4 mt-4">
           <span className="font-light">{quantity}</span>
           <span className="text-xs font-light">X</span>
-          <span className="text-xs text-theme">{price}</span>
+          <span className="text-xs text-theme">{formatPrice(price)}</span>
         </div>
       </div>
 
@@ -91,7 +92,7 @@ export default function Cart() {
 
       <div className="flex justify-between gap-5 mt-6">
         <span>Subtotal</span>
-        <span className="font-semibold text-theme">Rs. 520,000.00</span>
+        <span className="font-semibold text-theme">{formatPrice(520000)}</span>
       </div>
 
       <Separator className="my-6" />

@@ -2,7 +2,7 @@ import { HTMLAttributes } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GitCompare, Heart, Share2 } from 'lucide-react';
 import dining from '@/assets/dining.png';
-import { cn } from '@/common/lib/utils';
+import { cn, formatPrice } from '@/common/lib/utils';
 import { Button } from '../ui/button';
 
 const discount = null;
@@ -44,9 +44,9 @@ function Card() {
         <span className="text-2xl">Syltherine</span>
         <span className="font-medium text-text-s">Stylish cafe chair</span>
         <div className="flex justify-between">
-          <span className="font-semibold text-xl">Rs 250,000</span>
+          <span className="font-semibold text-xl">{formatPrice(75000)}</span>
           <s className="font-normal text-str text-text-s/75">
-            <span className="text-text-s">Rs 300,000</span>
+            <span className="text-text-s">{formatPrice(80000)}</span>
           </s>
         </div>
       </div>
