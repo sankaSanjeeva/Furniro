@@ -1,11 +1,11 @@
+import { useSearchParams } from 'react-router-dom';
 import { Overview, PreFooter, Section } from '@/common/components';
 import { Header, Table } from './components';
 
 export default function Comparison() {
-  /**
-   * Access ids
-   * console.log(searchParams.getAll('id'));
-   */
+  const [searchParams] = useSearchParams();
+
+  const ids = searchParams.getAll('productId');
 
   return (
     <div>
@@ -13,7 +13,7 @@ export default function Comparison() {
 
       <Section wrapperClass="overflow-auto" className="min-w-[920px]">
         <Header />
-        <Table />
+        <Table ids={ids} />
       </Section>
 
       <Section
