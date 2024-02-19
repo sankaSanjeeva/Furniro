@@ -8,9 +8,12 @@ export default function Root() {
   const ref = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([{ isIntersecting }]) => {
-      setHasScrolled(!isIntersecting);
-    });
+    const observer = new IntersectionObserver(
+      ([{ isIntersecting }]) => {
+        setHasScrolled(!isIntersecting);
+      },
+      { rootMargin: '96px' }
+    );
 
     if (ref.current) {
       observer.observe(ref.current);
