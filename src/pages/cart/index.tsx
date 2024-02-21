@@ -1,9 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import { BinIcon } from '@/assets/icons';
 import { Overview, PreFooter, Section } from '@/common/components';
 import { Button } from '@/common/components/ui/button';
 import { Input } from '@/common/components/ui/input';
+import { formatPrice } from '@/common/lib/utils';
 
 export default function Cart() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Overview page="cart" />
@@ -36,11 +40,11 @@ export default function Cart() {
                     />
                   </td>
                   <td className="p-4">Asgaard sofa</td>
-                  <td className="p-4">Rs. 250,000.00</td>
+                  <td className="p-4">{formatPrice(250000)}</td>
                   <td className="p-4">
-                    <Input className="w-12" />
+                    <Input className="w-12 h-10" />
                   </td>
-                  <td className="p-4">Rs. 250,000.00</td>
+                  <td className="p-4">{formatPrice(250000)}</td>
                   <td className="p-4">
                     <button type="button">
                       <BinIcon className="text-theme/80 hover:text-theme transition-colors" />
@@ -55,13 +59,17 @@ export default function Cart() {
             <h3 className="font-semibold text-[32px]">Cart Totals</h3>
             <div className="flex justify-between items-center gap-12">
               <span className="font-medium">Subtotal</span>
-              <span className="text-text-t">Rs. 250,000.00</span>
+              <span className="text-text-t">{formatPrice(250000)}</span>
             </div>
             <div className="flex justify-between items-center gap-12">
               <span className="font-medium">Total</span>
-              <span className="text-xl text-theme">Rs. 250,000.00</span>
+              <span className="text-xl text-theme">{formatPrice(250000)}</span>
             </div>
-            <Button variant="secondary" className="w-56">
+            <Button
+              variant="secondary"
+              className="w-56"
+              onClick={() => navigate('/shop/cart/checkout')}
+            >
               Checkout
             </Button>
           </div>

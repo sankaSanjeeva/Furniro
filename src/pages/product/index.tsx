@@ -8,7 +8,7 @@ import {
   RelatedProducts,
 } from './components';
 import { Button } from '@/common/components/ui/button';
-import { cn } from '@/common/lib/utils';
+import { cn, formatPrice } from '@/common/lib/utils';
 import { FacebookIcon, InstagramIcon, TwitterXIcon } from '@/assets/icons';
 
 const sizes = ['L', 'XL', 'XS'];
@@ -70,7 +70,9 @@ export default function Product() {
 
           <div>
             <h1 className="text-[42px]">Asgaard sofa</h1>
-            <span className="font-medium text-text-t">Rs. 250,000.00</span>
+            <span className="font-medium text-text-t">
+              {formatPrice(250000)}
+            </span>
 
             <div className="flex items-center gap-5 mt-[10px]">
               <StarRate rate={4} />

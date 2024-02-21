@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { Button } from '@/common/components/ui/button';
 
 const data = [
   {
@@ -61,7 +62,7 @@ const data = [
   },
 ];
 
-export default function Table() {
+export default function Table({ ids }: { ids: string[] }) {
   return (
     <table className="w-full table-fixed mt-14 border-t border-r-[#D9D9D9]">
       <tbody>
@@ -90,6 +91,18 @@ export default function Table() {
             ))}
           </Fragment>
         ))}
+        <tr>
+          <td className="border-r py-4 px-14 border-r-[#D9D9D9]" />
+          <td className="border-r py-4 px-14 border-r-[#D9D9D9]">
+            {ids[0] && <Button>Add to Cart</Button>}
+          </td>
+          <td className="border-r py-4 px-14 border-r-[#D9D9D9]">
+            {ids[1] && <Button>Add to Cart</Button>}
+          </td>
+          <td className="py-4 pl-14">
+            {ids[3] && <Button>Add to Cart</Button>}
+          </td>
+        </tr>
       </tbody>
     </table>
   );
