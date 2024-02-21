@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { BinIcon } from '@/assets/icons';
 import { Overview, PreFooter, Section } from '@/common/components';
 import { Button } from '@/common/components/ui/button';
@@ -5,6 +6,8 @@ import { Input } from '@/common/components/ui/input';
 import { formatPrice } from '@/common/lib/utils';
 
 export default function Cart() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Overview page="cart" />
@@ -39,7 +42,7 @@ export default function Cart() {
                   <td className="p-4">Asgaard sofa</td>
                   <td className="p-4">{formatPrice(250000)}</td>
                   <td className="p-4">
-                    <Input className="w-12" />
+                    <Input className="w-12 h-10" />
                   </td>
                   <td className="p-4">{formatPrice(250000)}</td>
                   <td className="p-4">
@@ -62,7 +65,11 @@ export default function Cart() {
               <span className="font-medium">Total</span>
               <span className="text-xl text-theme">{formatPrice(250000)}</span>
             </div>
-            <Button variant="secondary" className="w-56">
+            <Button
+              variant="secondary"
+              className="w-56"
+              onClick={() => navigate('/shop/cart/checkout')}
+            >
               Checkout
             </Button>
           </div>

@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { ErrorPage, Root } from '@/common/components';
 import { Comparison, Home, Product, Shop } from './pages';
 import Cart from './pages/cart';
+import Checkout from './pages/checkout';
 
 export default createBrowserRouter([
   {
@@ -33,7 +34,7 @@ export default createBrowserRouter([
               },
               {
                 path: 'checkout',
-                element: <div />,
+                element: <Checkout />,
               },
             ],
           },

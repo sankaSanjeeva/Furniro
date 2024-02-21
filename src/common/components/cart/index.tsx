@@ -108,9 +108,15 @@ export default function Cart() {
           </Button>
         </SheetClose>
 
-        <Button variant="secondary" size="sm">
-          Checkout
-        </Button>
+        <SheetClose asChild>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => navigate('/shop/cart/checkout')}
+          >
+            Checkout
+          </Button>
+        </SheetClose>
 
         <SheetClose asChild>
           <Button
