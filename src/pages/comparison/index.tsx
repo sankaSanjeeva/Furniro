@@ -16,12 +16,7 @@ export default function Comparison() {
         <Table ids={ids} />
       </Section>
 
-      <Section
-        wrapperClass="bg-theme-light"
-        className="py-24 px-10 lg:px-14 xl:px-14"
-      >
-        <PreFooter />
-      </Section>
+      <PreFooter />
     </div>
   );
 }

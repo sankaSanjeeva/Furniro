@@ -1,6 +1,6 @@
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Form, Overview, Section } from '@/common/components';
+import { Form, Overview, PreFooter, Section } from '@/common/components';
 import schema, { Inputs } from './schema';
 import { CheckoutForm, Payments } from './components';
 
@@ -30,6 +30,8 @@ export default function Checkout() {
           </Form>
         </FormProvider>
       </Section>
+
+      <PreFooter />
     </div>
   );
 }

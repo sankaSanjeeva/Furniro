@@ -1,8 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { ErrorPage, Root } from '@/common/components';
-import { Comparison, Home, Product, Shop } from './pages';
-import Cart from './pages/cart';
-import Checkout from './pages/checkout';
+import {
+  Cart,
+  Checkout,
+  Comparison,
+  Contact,
+  Home,
+  Product,
+  Shop,
+} from './pages';
 
 export default createBrowserRouter([
   {
@@ -50,7 +56,7 @@ export default createBrowserRouter([
       },
       {
         path: 'contact',
-        element: <div />,
+        element: <Contact />,
       },
     ],
   },

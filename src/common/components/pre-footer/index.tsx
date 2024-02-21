@@ -5,6 +5,7 @@ import {
   SupportIcon,
   TrophyIcon,
 } from '@/assets/icons';
+import { Section } from '..';
 
 function Card({
   icon,
@@ -28,27 +29,32 @@ function Card({
 
 export default function PreFooter() {
   return (
-    <div className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-2 laptop:flex gap-14">
-      <Card
-        icon={<TrophyIcon />}
-        name="High Quality"
-        description="crafted from top materials"
-      />
-      <Card
-        icon={<GuaranteeIcon />}
-        name="Warranty Protection"
-        description="Over 2 years"
-      />
-      <Card
-        icon={<ShippingIcon />}
-        name="Free Shipping"
-        description="Order over 150 $"
-      />
-      <Card
-        icon={<SupportIcon />}
-        name="24 / 7 Support"
-        description="Dedicated support"
-      />
-    </div>
+    <Section
+      wrapperClass="bg-theme-light"
+      className="py-24 px-10 lg:px-14 xl:px-14"
+    >
+      <div className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-2 laptop:flex gap-14">
+        <Card
+          icon={<TrophyIcon />}
+          name="High Quality"
+          description="crafted from top materials"
+        />
+        <Card
+          icon={<GuaranteeIcon />}
+          name="Warranty Protection"
+          description="Over 2 years"
+        />
+        <Card
+          icon={<ShippingIcon />}
+          name="Free Shipping"
+          description="Order over 150 $"
+        />
+        <Card
+          icon={<SupportIcon />}
+          name="24 / 7 Support"
+          description="Dedicated support"
+        />
+      </div>
+    </Section>
   );
 }
