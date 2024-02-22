@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Section, Separator, StarRate } from '@/common/components';
 import {
@@ -40,16 +40,6 @@ export default function Product() {
       return params;
     });
   };
-
-  useEffect(() => {
-    if (!size) {
-      handleSearchParamsChange('size', sizes[0]);
-    }
-    if (!color) {
-      handleSearchParamsChange('color', colors[0]);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div>

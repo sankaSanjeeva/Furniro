@@ -76,12 +76,7 @@ export default function Cart() {
         </div>
       </Section>
 
-      <Section
-        wrapperClass="bg-theme-light"
-        className="py-24 px-10 lg:px-14 xl:px-14"
-      >
-        <PreFooter />
-      </Section>
+      <PreFooter />
     </div>
   );
 }

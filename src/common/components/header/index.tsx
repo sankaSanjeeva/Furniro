@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Heart, Search, ShoppingCart, UserRound } from 'lucide-react';
+import { MenuLink } from '@/router';
+import { cn } from '@/common/lib/utils';
 import logo from './logo.png';
 import { Button } from '../ui/button';
-import { cn } from '@/common/lib/utils';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 import { Cart } from '..';
 
@@ -94,17 +95,25 @@ export default function Header({ hasScrolled }: { hasScrolled: boolean }) {
       >
         <div className="mx-auto max-w-screen-xl h-full px-5 lg:px-10 flex flex-col md:flex-row justify-around md:justify-between items-center gap-5">
           <div className="shrink-0">
-            <NavLink to="/">
+            <NavLink to={MenuLink.HOME}>
               <img src={logo} className="w-40 lg:w-44" alt="React logo" />
             </NavLink>
           </div>
 
           <nav>
             <ul className="flex gap-10 lg:gap-20 flex-col md:flex-row items-center font-medium">
-              <NavItem to="/" name="Home" onClick={collapseMenu} />
-              <NavItem to="shop" name="Shop" onClick={collapseMenu} />
-              <NavItem to="about" name="About" onClick={collapseMenu} />
-              <NavItem to="contact" name="Contact" onClick={collapseMenu} />
+              <NavItem to={MenuLink.HOME} name="Home" onClick={collapseMenu} />
+              <NavItem to={MenuLink.SHOP} name="Shop" onClick={collapseMenu} />
+              <NavItem
+                to={MenuLink.ABOUT}
+                name="About"
+                onClick={collapseMenu}
+              />
+              <NavItem
+                to={MenuLink.CONTACT}
+                name="Contact"
+                onClick={collapseMenu}
+              />
             </ul>
           </nav>
 

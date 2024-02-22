@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { MenuLink } from '@/router';
 import { Button } from '../ui/button';
 import { Separator } from '..';
 
@@ -19,16 +20,16 @@ export default function Footer() {
           <span className="text-[#9F9F9F]">Links</span>
           <ul className="mt-5 md:mt-12 flex flex-row md:flex-col gap-10 flex-wrap font-medium">
             <li>
-              <Link to="/">Home</Link>
+              <Link to={MenuLink.HOME}>Home</Link>
             </li>
             <li>
-              <Link to="shop">Shop</Link>
+              <Link to={MenuLink.SHOP}>Shop</Link>
             </li>
             <li>
-              <Link to="about">About</Link>
+              <Link to={MenuLink.ABOUT}>About</Link>
             </li>
             <li>
-              <Link to="contact">Contact</Link>
+              <Link to={MenuLink.CONTACT}>Contact</Link>
             </li>
           </ul>
         </div>

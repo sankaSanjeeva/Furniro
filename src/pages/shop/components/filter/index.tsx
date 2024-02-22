@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import {
   DropdownMenu,
@@ -27,16 +26,6 @@ export default function Filter({ itemCount }: { itemCount: number }) {
     const { textContent } = e.target as HTMLDivElement;
     updateSearchParams(key, textContent!);
   };
-
-  useEffect(() => {
-    const params = new URLSearchParams({
-      view: view ?? 'grid',
-      show: show ?? '8',
-      sort_by: sortBy ?? 'default',
-    });
-    setSearchParams(params);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className="flex justify-center lg:justify-between flex-wrap gap-10">

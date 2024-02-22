@@ -1,8 +1,22 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { ErrorPage, Root } from '@/common/components';
-import { Comparison, Home, Product, Shop } from './pages';
-import Cart from './pages/cart';
-import Checkout from './pages/checkout';
+import {
+  Cart,
+  Checkout,
+  Comparison,
+  Contact,
+  Home,
+  Product,
+  Shop,
+} from './pages';
+
+// eslint-disable-next-line no-shadow
+export enum MenuLink {
+  HOME = '/',
+  SHOP = 'shop?view=grid&show=8&sort_by=default',
+  ABOUT = 'about',
+  CONTACT = 'contact',
+}
 
 export default createBrowserRouter([
   {
@@ -50,7 +64,7 @@ export default createBrowserRouter([
       },
       {
         path: 'contact',
-        element: <div />,
+        element: <Contact />,
       },
     ],
   },
