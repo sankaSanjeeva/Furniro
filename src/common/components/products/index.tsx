@@ -55,7 +55,7 @@ function Card() {
         <Button
           variant="outline"
           className="w-[200px]"
-          onClick={() => navigate(`/shop/${id}`)}
+          onClick={() => navigate(`/shop/${id}?size=L&color=%23816DFA`)}
         >
           Add to cart
         </Button>

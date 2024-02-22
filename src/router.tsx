@@ -10,6 +10,14 @@ import {
   Shop,
 } from './pages';
 
+// eslint-disable-next-line no-shadow
+export enum MenuLink {
+  HOME = '/',
+  SHOP = 'shop?view=grid&show=8&sort_by=default',
+  ABOUT = 'about',
+  CONTACT = 'contact',
+}
+
 export default createBrowserRouter([
   {
     path: '/',

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import { Footer, Header, Section, Separator } from '..';
 
 export default function Root() {
@@ -39,6 +39,8 @@ export default function Root() {
           <Footer />
         </Section>
       </footer>
+
+      <ScrollRestoration getKey={(location) => location.pathname} />
     </div>
   );
 }
