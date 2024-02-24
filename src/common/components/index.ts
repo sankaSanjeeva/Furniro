@@ -4,6 +4,7 @@ export { default as Footer } from './footer';
 export { default as Form } from './form';
 export { default as Header } from './header';
 export { default as Overview } from './overview';
+export { default as Pagination } from './pagination';
 export { default as PreFooter } from './pre-footer';
 export { default as Products } from './products';
 export { default as Root } from './root';

@@ -1,5 +1,4 @@
-import { Products } from '@/common/components';
-import { Pagination } from '..';
+import { Pagination, Products } from '@/common/components';
 
 export default function ProductList() {
   return (
@@ -10,7 +9,7 @@ export default function ProductList() {
         ))}
       </Products>
 
-      <Pagination itemCount={32} />
+      <Pagination pageCount={4} />
     </>
   );
 }
