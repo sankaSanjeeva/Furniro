@@ -26,7 +26,7 @@ export default function Footer() {
               <Link to={MenuLink.SHOP}>Shop</Link>
             </li>
             <li>
-              <Link to={MenuLink.ABOUT}>About</Link>
+              <Link to={MenuLink.BLOG}>Blog</Link>
             </li>
             <li>
               <Link to={MenuLink.CONTACT}>Contact</Link>

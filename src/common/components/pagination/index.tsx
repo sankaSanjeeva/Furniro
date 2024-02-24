@@ -1,17 +1,16 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Button } from '@/common/components/ui/button';
 import { cn } from '@/common/lib/utils';
 
-export default function Pagination({ itemCount }: { itemCount: number }) {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  pageCount: number;
+}
+
+export default function Pagination({ pageCount, className }: Props) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const page = Number(searchParams.get('page') ?? 1);
-  const show = Number(searchParams.get('show') ?? 8);
-
-  const pageCount = useMemo(() => {
-    return Math.ceil(itemCount / show);
-  }, [itemCount, show]);
 
   const makePageArray = (start: number, end: number) =>
     Array.from({ length: pageCount }, (_, k) => k + 1).slice(start, end);
@@ -46,7 +45,12 @@ export default function Pagination({ itemCount }: { itemCount: number }) {
   };
 
   return (
-    <div className="flex justify-center items-center flex-col sm:flex-row gap-9">
+    <div
+      className={cn(
+        'flex justify-center items-center flex-col sm:flex-row gap-9',
+        className
+      )}
+    >
       <Button
         className="rounded min-w-24 bg-theme-light text-black"
         disabled={page === 1}

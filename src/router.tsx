@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { ErrorPage, Root } from '@/common/components';
 import {
+  Blog,
   Cart,
   Checkout,
   Comparison,
@@ -14,7 +15,7 @@ import {
 export enum MenuLink {
   HOME = '/',
   SHOP = 'shop?view=grid&show=8&sort_by=default',
-  ABOUT = 'about',
+  BLOG = 'blog',
   CONTACT = 'contact',
 }
 
@@ -59,8 +60,8 @@ export default createBrowserRouter([
         ],
       },
       {
-        path: 'about',
-        element: <div />,
+        path: 'blog',
+        element: <Blog />,
       },
       {
         path: 'contact',

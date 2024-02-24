@@ -1,3 +1,4 @@
+export { default as Blog } from './blog';
 export { default as Cart } from './cart';
 export { default as Checkout } from './checkout';
 export { default as Comparison } from './comparison';

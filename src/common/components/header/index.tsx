@@ -104,11 +104,7 @@ export default function Header({ hasScrolled }: { hasScrolled: boolean }) {
             <ul className="flex gap-10 lg:gap-20 flex-col md:flex-row items-center font-medium">
               <NavItem to={MenuLink.HOME} name="Home" onClick={collapseMenu} />
               <NavItem to={MenuLink.SHOP} name="Shop" onClick={collapseMenu} />
-              <NavItem
-                to={MenuLink.ABOUT}
-                name="About"
-                onClick={collapseMenu}
-              />
+              <NavItem to={MenuLink.BLOG} name="Blog" onClick={collapseMenu} />
               <NavItem
                 to={MenuLink.CONTACT}
                 name="Contact"
