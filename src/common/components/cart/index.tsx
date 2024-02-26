@@ -1,39 +1,22 @@
 import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
 import { CartCloseIcon, CartRemoveIcon } from '@/assets/icons';
 import { SheetClose } from '@/common/components/ui/sheet';
 import { Separator } from '..';
 import { Button } from '../ui/button';
 import { formatPrice } from '@/common/lib/utils';
+import { CartItem } from '@/common/types';
+import { removeProduct } from '@/redux/slices/card-slice';
 
-const items = [
-  {
-    id: 123,
-    image: 'https://m.media-amazon.com/images/I/41g9yMVDzDL.jpg',
-    name: 'Asgaard sofa',
-    quantity: 1,
-    price: 250000,
-  },
-  {
-    id: 456,
-    image: 'https://m.media-amazon.com/images/I/41g9yMVDzDL.jpg',
-    name: 'Asgaard sofa',
-    quantity: 1,
-    price: 250000,
-  },
-];
+function Item({ product: { code, image, name, price }, quantity }: CartItem) {
+  const dispatch = useDispatch();
 
-function Item({
-  image,
-  name,
-  quantity,
-  price,
-}: {
-  image: string;
-  name: string;
-  quantity: number;
-  price: number;
-}) {
+  const handleRoveFromCart = () => {
+    dispatch(removeProduct(code));
+  };
+
   return (
     <div className="flex justify-between items-center gap-8">
       <img
@@ -51,7 +34,7 @@ function Item({
         </div>
       </div>
 
-      <button type="button">
+      <button type="button" onClick={handleRoveFromCart}>
         <CartRemoveIcon className="text-text-t hover:text-text-s transition-colors" />
       </button>
     </div>
@@ -61,16 +44,15 @@ function Item({
 export default function Cart() {
   const navigate = useNavigate();
 
+  const items = useSelector((state: RootState) => state.cart.items);
+
   const productIds = useMemo(
     () =>
       items.reduce((prev, curr) => {
-        prev.append('productId', curr.id.toString());
+        prev.append('productId', curr.product.code);
         return prev;
       }, new URLSearchParams()),
-    /**
-     * TODO: Update dependencies
-     */
-    []
+    [items]
   ).toString();
 
   return (
@@ -86,7 +68,7 @@ export default function Cart() {
 
       <div className="flex flex-col gap-5 flex-grow">
         {items.map((item) => (
-          <Item key={item.id} {...item} />
+          <Item key={item.product.code} {...item} />
         ))}
       </div>
 
