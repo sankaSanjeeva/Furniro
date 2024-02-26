@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { Section, Separator, StarRate } from '@/common/components';
 import {
   AdditionalDetails,
@@ -10,12 +11,15 @@ import {
 import { Button } from '@/common/components/ui/button';
 import { cn, formatPrice } from '@/common/lib/utils';
 import { FacebookIcon, InstagramIcon, TwitterXIcon } from '@/assets/icons';
+import { addProduct } from '@/redux/slices/card-slice';
 
 const sizes = ['L', 'XL', 'XS'];
 const colors = ['#816DFA', '#000000', '#B88E2F'];
 
 export default function Product() {
   const [count, setCount] = useState(1);
+
+  const dispatch = useDispatch();
 
   const { productId } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -39,6 +43,20 @@ export default function Product() {
       params.set(key, value);
       return params;
     });
+  };
+
+  const handleAddToCart = () => {
+    dispatch(
+      addProduct({
+        product: {
+          code: productId!,
+          name: 'Asgaard sofa',
+          price: 30000,
+          image: 'https://m.media-amazon.com/images/I/41g9yMVDzDL.jpg',
+        },
+        quantity: count,
+      })
+    );
   };
 
   return (
@@ -136,7 +154,9 @@ export default function Product() {
               </div>
 
               <div className="flex gap-[10px]">
-                <Button variant="secondary">Add To Cart</Button>
+                <Button variant="secondary" onClick={handleAddToCart}>
+                  Add To Cart
+                </Button>
                 <Button
                   variant="secondary"
                   onClick={() =>

@@ -27,6 +27,12 @@ module.exports = {
         'react/prop-types': 'off',
       },
     },
+    {
+      files: ['src/redux/slices/*.*'],
+      rules: {
+        'no-param-reassign': 'off',
+      },
+    },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

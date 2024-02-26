@@ -6,7 +6,8 @@ import { cn, formatPrice } from '@/common/lib/utils';
 import { Button } from '../ui/button';
 
 const discount = null;
-const id = 123;
+
+const getId = () => Math.floor(Math.random() * 1000);
 
 function Grid({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
   return (
@@ -55,7 +56,7 @@ function Card() {
         <Button
           variant="outline"
           className="w-[200px]"
-          onClick={() => navigate(`/shop/${id}?size=L&color=%23816DFA`)}
+          onClick={() => navigate(`/shop/${getId()}?size=L&color=%23816DFA`)}
         >
           Add to cart
         </Button>
@@ -70,7 +71,7 @@ function Card() {
           <button
             type="button"
             className="flex items-center gap-0.5 hover:text-theme"
-            onClick={() => navigate(`/shop/comparison?productId=${id}`)}
+            onClick={() => navigate(`/shop/comparison?productId=${getId()}`)}
           >
             <GitCompare width={16} height={16} />
             <span>Compare</span>
