@@ -14,7 +14,7 @@ function Item({ product: { code, image, name, price }, quantity }: CartItem) {
   const dispatch = useDispatch();
 
   const handleRoveFromCart = () => {
-    dispatch(removeProduct(code));
+    dispatch(removeProduct({ code, name }));
   };
 
   return (
