@@ -33,6 +33,13 @@ module.exports = {
         'no-param-reassign': 'off',
       },
     },
+    {
+      files: ['src/mocks/*.*'],
+      rules: {
+        'import/prefer-default-export': 'off',
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -54,5 +61,6 @@ module.exports = {
     'vite.config.ts',
     'postcss.config.js',
     'tailwind.config.js',
+    'public/mockServiceWorker.js'
   ],
 };
