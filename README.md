@@ -2,7 +2,7 @@
 
 <br/>
 
-<p align="center">An e-commerce website for a furniture shope</p>
+<p align="center">An e-commerce website for a furniture shop</p>
 
 <p align="center">View preview on <a href="https://furniro-ochre.vercel.app/" target="_blank">furniro-ochre.vercel.app</a></p>
 
