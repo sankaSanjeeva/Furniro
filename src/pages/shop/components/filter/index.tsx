@@ -8,7 +8,7 @@ import {
 import { FilterIcon, GridViewIcon, ListViewIcon } from '@/assets/icons';
 import { cn } from '@/common/lib/utils';
 
-export default function Filter({ itemCount }: { itemCount: number }) {
+export default function Filter({ itemCount }: { itemCount?: number }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const view = searchParams.get('view');

@@ -1,11 +1,12 @@
 import { Pagination, Products } from '@/common/components';
+import { Product } from '@/common/types';
 
-export default function ProductList() {
+export default function ProductList({ products }: { products: Product[] }) {
   return (
     <>
       <Products className="mb-16">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((x) => (
-          <Products.Card key={x} />
+        {products.map((product) => (
+          <Products.Card key={product.code} {...product} />
         ))}
       </Products>
 

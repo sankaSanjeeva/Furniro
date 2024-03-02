@@ -34,7 +34,7 @@ module.exports = {
       },
     },
     {
-      files: ['src/mocks/*.*'],
+      files: ['src/mocks/**/*.*'],
       rules: {
         'import/prefer-default-export': 'off',
         'import/no-extraneous-dependencies': 'off',
