@@ -50,7 +50,7 @@ export default function Header({ hasScrolled }: { hasScrolled: boolean }) {
   return (
     <header
       className={cn(
-        'sticky top-0 w-full flex flex-col overflow-hidden h-24 z-10 transition-[height] shadow-md backdrop-blur supports-[backdrop-filter]:bg-white/60',
+        'sticky top-0 w-full flex flex-col overflow-hidden h-24 z-[1000] transition-[height] shadow-md backdrop-blur supports-[backdrop-filter]:bg-white/60',
         hasScrolled && 'h-16',
         isMenuExpand && 'h-screen'
       )}

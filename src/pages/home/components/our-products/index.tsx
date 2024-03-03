@@ -1,24 +1,20 @@
-import { useEffect, useState } from 'react';
 import { Products } from '@/common/components';
 import { Button } from '@/common/components/ui/button';
-import { Product } from '@/common/types';
+import { useGetProductsQuery } from '@/redux/services/product';
 
 export default function OurProducts() {
-  const [products, setProducts] = useState<Product[]>([]);
-
-  useEffect(() => {
-    fetch('/products?page=1')
-      .then((res) => res.json())
-      .then((res) => setProducts(res.data))
-      .catch();
-  }, []);
+  const { data } = useGetProductsQuery({
+    page: 1,
+    offset: 8,
+    sortBy: 'default',
+  });
 
   return (
     <div className="font-semibold text-text-p">
       <h1 className="text-5xl font-bold text-center">Our Products</h1>
 
       <Products className="mt-8">
-        {products.map((product) => (
+        {data?.data.map((product) => (
           <Products.Card key={product.code} {...product} />
         ))}
       </Products>

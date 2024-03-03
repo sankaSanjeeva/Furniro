@@ -1,16 +1,19 @@
 import { Pagination, Products } from '@/common/components';
-import { Product } from '@/common/types';
+import { PaginationResponse, Product } from '@/common/types';
 
-export default function ProductList({ products }: { products: Product[] }) {
+export default function ProductList({
+  data,
+  pagination: { totalPages },
+}: PaginationResponse<Product>) {
   return (
     <>
       <Products className="mb-16">
-        {products.map((product) => (
+        {data.map((product) => (
           <Products.Card key={product.code} {...product} />
         ))}
       </Products>
 
-      <Pagination pageCount={4} />
+      <Pagination pageCount={totalPages} />
     </>
   );
 }
