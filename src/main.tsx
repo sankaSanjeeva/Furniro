@@ -8,9 +8,12 @@ import Toaster from './common/components/ui/sonner';
 import './index.css';
 
 async function enableMocking() {
-  if (process.env.NODE_ENV !== 'development') {
-    return;
-  }
+  /**
+   * mock service worker has been enabled in all modes since there isn't an actual backend
+   */
+  // if (process.env.NODE_ENV !== 'development') {
+  //   return;
+  // }
 
   const { worker } = await import('./mocks/browser');
 
