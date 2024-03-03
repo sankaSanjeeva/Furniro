@@ -1,14 +1,21 @@
 import { Products } from '@/common/components';
 import { Button } from '@/common/components/ui/button';
+import { useGetProductsQuery } from '@/redux/services/product';
 
 export default function OurProducts() {
+  const { data } = useGetProductsQuery({
+    page: 1,
+    offset: 8,
+    sortBy: 'default',
+  });
+
   return (
     <div className="font-semibold text-text-p">
       <h1 className="text-5xl font-bold text-center">Our Products</h1>
 
       <Products className="mt-8">
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((x) => (
-          <Products.Card key={x} />
+        {data?.data.map((product) => (
+          <Products.Card key={product.code} {...product} />
         ))}
       </Products>
 

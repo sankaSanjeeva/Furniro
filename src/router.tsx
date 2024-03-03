@@ -14,7 +14,7 @@ import {
 // eslint-disable-next-line no-shadow
 export enum MenuLink {
   HOME = '/',
-  SHOP = 'shop?view=grid&show=8&sort_by=default',
+  SHOP = 'shop?page=1&view=grid&show=8&sortBy=default',
   BLOG = 'blog',
   CONTACT = 'contact',
 }

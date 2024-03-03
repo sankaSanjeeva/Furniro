@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import {
   DropdownMenu,
@@ -8,23 +9,43 @@ import {
 import { FilterIcon, GridViewIcon, ListViewIcon } from '@/assets/icons';
 import { cn } from '@/common/lib/utils';
 
-export default function Filter({ itemCount }: { itemCount: number }) {
+export default function Filter({ itemCount = 0 }: { itemCount?: number }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const view = searchParams.get('view');
-  const show = searchParams.get('show');
-  const sortBy = searchParams.get('sort_by');
+  const page = Number(searchParams.get('page'));
+  const show = Number(searchParams.get('show'));
+  const sortBy = searchParams.get('sortBy');
 
-  const updateSearchParams = (key: string, value: string) => {
+  const summeryText = useMemo(() => {
+    const start = (page - 1) * show + 1;
+    const end = page * show;
+
+    return `Showing ${start}-${end > itemCount ? itemCount : end} of ${itemCount} results`;
+  }, [itemCount, page, show]);
+
+  const handleView = (value: string) => {
     setSearchParams((params) => {
-      params.set(key, value!);
+      params.set('view', value);
       return params;
     });
   };
 
-  const handleSelect = (e: Event, key: string) => {
+  const handleShow = (e: Event) => {
     const { textContent } = e.target as HTMLDivElement;
-    updateSearchParams(key, textContent!);
+    setSearchParams((params) => {
+      params.set('show', textContent!);
+      params.set('page', '1');
+      return params;
+    });
+  };
+
+  const handleSortBy = (e: Event) => {
+    const { textContent } = e.target as HTMLDivElement;
+    setSearchParams((params) => {
+      params.set('sortBy', textContent!);
+      return params;
+    });
   };
 
   return (
@@ -35,10 +56,7 @@ export default function Filter({ itemCount }: { itemCount: number }) {
             <FilterIcon />
           </button>
           <span>Filter</span>
-          <button
-            type="button"
-            onClick={() => updateSearchParams('view', 'grid')}
-          >
+          <button type="button" onClick={() => handleView('grid')}>
             <GridViewIcon
               className={cn(
                 '[&>path]:fill-text-s [&>path]:hover:fill-black',
@@ -46,10 +64,7 @@ export default function Filter({ itemCount }: { itemCount: number }) {
               )}
             />
           </button>
-          <button
-            type="button"
-            onClick={() => updateSearchParams('view', 'list')}
-          >
+          <button type="button" onClick={() => handleView('list')}>
             <ListViewIcon
               className={cn(
                 '[&>path]:fill-text-s [&>path]:hover:fill-black',
@@ -60,9 +75,7 @@ export default function Filter({ itemCount }: { itemCount: number }) {
           <div className="h-10 w-0.5 hidden sm:block bg-text-s" />
         </div>
 
-        <span>
-          Showing 1-{show} of {itemCount} results
-        </span>
+        <span>{summeryText}</span>
       </div>
 
       <div className="flex justify-center flex-wrap gap-5">
@@ -77,7 +90,7 @@ export default function Filter({ itemCount }: { itemCount: number }) {
                 <DropdownMenuItem
                   key={x}
                   className="text-text-s"
-                  onSelect={(e) => handleSelect(e, 'show')}
+                  onSelect={handleShow}
                 >
                   {x}
                 </DropdownMenuItem>
@@ -93,11 +106,11 @@ export default function Filter({ itemCount }: { itemCount: number }) {
               {sortBy}
             </DropdownMenuTrigger>
             <DropdownMenuContent className="min-w-0">
-              {['default', 'name', 'date'].map((x) => (
+              {['default', 'name', 'price'].map((x) => (
                 <DropdownMenuItem
                   key={x}
                   className="capitalize text-text-s"
-                  onSelect={(e) => handleSelect(e, 'sort_by')}
+                  onSelect={handleSortBy}
                 >
                   {x}
                 </DropdownMenuItem>

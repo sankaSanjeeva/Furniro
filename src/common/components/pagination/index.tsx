@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Button } from '@/common/components/ui/button';
 import { cn } from '@/common/lib/utils';
@@ -43,6 +43,11 @@ export default function Pagination({ pageCount, className }: Props) {
 
     changeSelectedPage(nextPage);
   };
+
+  useEffect(() => {
+    setDisplayPages(makePageArray(0, 3));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageCount]);
 
   return (
     <div

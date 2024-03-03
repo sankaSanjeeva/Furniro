@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Section, Separator, StarRate } from '@/common/components';
@@ -58,6 +58,14 @@ export default function Product() {
       })
     );
   };
+
+  useEffect(() => {
+    fetch(`/products/${productId}`)
+      .then((res) => res.json())
+      .then((res) => console.log(res.data))
+      .catch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
@@ -213,7 +221,7 @@ export default function Product() {
       <Separator />
 
       <Section>
-        <RelatedProducts />
+        <RelatedProducts productId={productId} />
       </Section>
     </div>
   );
